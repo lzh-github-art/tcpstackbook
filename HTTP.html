@@ -1,0 +1,368 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HTTP：超文本传输协议 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="DNS.html" />
+    
+    
+    <link rel="prev" href="TCP.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    TCP/IP网络协议栈开发教程-课程介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="IP.html">
+            
+                <a href="IP.html">
+            
+                    
+                    IP：网际协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="ICMP.html">
+            
+                <a href="ICMP.html">
+            
+                    
+                    ICMP：Internet控制报文协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="UDP.html">
+            
+                <a href="UDP.html">
+            
+                    
+                    UDP：用户数据报协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="TCP.html">
+            
+                <a href="TCP.html">
+            
+                    
+                    TCP：传输控制协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="HTTP.html">
+            
+                <a href="HTTP.html">
+            
+                    
+                    HTTP：超文本传输协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="DNS.html">
+            
+                <a href="DNS.html">
+            
+                    
+                    DNS：域名系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >HTTP：超文本传输协议</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="http&#xFF1A;&#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;">HTTP&#xFF1A;&#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;</h1>
+<p>HTTP&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#x3002;HTTP&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x5E38;&#x89C1;&#x6709;GET&#x548C;POST;URL&#x5B57;&#x6BB5;&#x5373;uri&#xFF0C;&#x5982;<a href="https://movie.douban.com/chart" target="_blank">https://movie.douban.com/chart</a> &#x4E2D;&#x7684;/chart;&#x7248;&#x672C;&#x53F7;&#x586B;&#x53EF;&#x5199;&#x4E3A;HTTP/1.1;cr&#x3001;lf&#x4EE3;&#x66FF;&#x56DE;&#x8F66;&#x6362;&#x884C;&#x7B26;\r\n&#x3002;&#x9996;&#x90E8;&#x884C;&#x4E2D;&#x53EF;&#x586B;&#x5145;headers&#x53C2;&#x6570;&#xFF0C;&#x952E;&#x503C;&#x95F4;&#x4EE5;&apos;: &apos;&#x8FDE;&#x63A5;&#xFF0C;&#x5982;&#x60F3;&#x8868;&#x793A;&#x952E;&#x4E3A;cookie&#xFF0C;&#x503C;&#x4E3A;id=1&#x7684;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x5199;cookie: id=1&#x3002;&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x5219;&#x662F;&#x8868;&#x5355;&#x6570;&#x636E;&#xFF0C;&#x5BF9;&#x5E94;&#x8BF7;&#x6C42;&#x65F6;&#x7684;payload&#xFF0C;&#x952E;&#x503C;&#x5BF9;&#x4E4B;&#x95F4;&#x4EE5;&apos;=&apos;&#x8FDE;&#x63A5;&#xFF0C;&#x5728;&#x9700;&#x8981;&#x4F20;&#x8F93;&#x8868;&#x5355;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x9996;&#x90E8;&#x5B57;&#x6BB5;Content-Type: application/x-www-form-urlencoded&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x9700;&#x8BBE;&#x7F6E;Content-Length&#x7684;&#x503C;&#x4E3A;&#x5B9E;&#x4F53;&#x957F;&#x5EA6;&#xFF0C;&#x5982;&#x5B9E;&#x4F53;&#x4E3A;&apos;num=1&apos;&#x65F6;&#x5E94;&#x8BBE;&#x7F6E;&#x4E3A;5&#x3002;&#x6700;&#x540E;&#xFF0C;&#x8D1F;&#x8F7D;&#x6570;&#x636E;&#x5E94;&#x4EE5;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F62;&#x5F0F;&#x7EC4;&#x5408;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x60F3;POST&#x8BF7;&#x6C42;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x7684;/index&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x4E14;&#x8868;&#x5355;&#x6570;&#x636E;&#x9700;&#x8981;&#x4F20;&#x9012;num&#x65F6;&#xFF0C;&#x8D1F;&#x8F7D;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x5199;&#x4E3A;&quot;POST /index HTTP/1.1\r\nContent-Length: 5\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\nnum=1&quot;</p>
+<div align="center">
+    <img src="pic/http_request.png" alt="">
+    <p style="font-size: 0.8em;">HTTP&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x683C;&#x5F0F;</p>
+</div>
+
+<p>&#x73B0;&#x5728;flaskserver.py&#x6587;&#x4EF6;&#x4E2D;&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;flask&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#xFF0C;&#x8BBE;&#x6CD5;&#x8BF7;&#x6C42;getrp&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;&#x4E3A;&apos;Hello, I get right parameters!&apos;&#x3002;&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x5728;httptests&#x4E2D;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">http</span><span class="hljs-params">(uint16 sport, uint16 dport, <span class="hljs-keyword">int</span> attempts)</span>
+</span>{
+  <span class="hljs-keyword">int</span> fd;
+  <span class="hljs-comment">// todo&#xFF1A;obuf&#x5BF9;&#x6784;&#x9020;&#x6B63;&#x786E;&#x7684;HTTP&#x62A5;&#x6587;</span>
+  <span class="hljs-keyword">char</span> *obuf = <span class="hljs-string">&quot;&quot;</span>;
+  uint32 dst;
+
+  <span class="hljs-comment">// 10.0.2.2, which qemu remaps to the external host,</span>
+  <span class="hljs-comment">// i.e. the machine you&apos;re running qemu on.</span>
+  dst = (<span class="hljs-number">10</span> &lt;&lt; <span class="hljs-number">24</span>) | (<span class="hljs-number">0</span> &lt;&lt; <span class="hljs-number">16</span>) | (<span class="hljs-number">2</span> &lt;&lt; <span class="hljs-number">8</span>) | (<span class="hljs-number">2</span> &lt;&lt; <span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">if</span>((fd = connect_tcp(dst, sport, dport)) &lt; <span class="hljs-number">0</span>){
+    <span class="hljs-built_in">fprintf</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;ping: connect() failed\n&quot;</span>);
+    <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+  }
+
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; attempts; i++) {
+    <span class="hljs-keyword">if</span>(write(fd, obuf, <span class="hljs-built_in">strlen</span>(obuf)) &lt; <span class="hljs-number">0</span>){
+      <span class="hljs-built_in">fprintf</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;ping: send() failed\n&quot;</span>);
+      <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+    }
+  }
+
+  <span class="hljs-keyword">char</span> ibuf[<span class="hljs-number">1024</span>];
+  <span class="hljs-keyword">int</span> cc = read(fd, ibuf, <span class="hljs-keyword">sizeof</span>(ibuf)<span class="hljs-number">-1</span>);
+  <span class="hljs-keyword">if</span>(cc &lt; <span class="hljs-number">0</span>){
+    <span class="hljs-built_in">fprintf</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;ping: recv() failed\n&quot;</span>);
+    <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+  }
+  ibuf[cc]=<span class="hljs-string">&apos;\0&apos;</span>;
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;rec: %s\n&quot;</span>, ibuf);
+}
+</code></pre>
+<p>HTTP&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<div align="center">
+    <img src="pic/http_response.png" alt="">
+    <p style="font-size: 0.8em;">HTTP&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x683C;&#x5F0F;</p>
+</div>
+
+
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="TCP.html" class="navigation navigation-prev " aria-label="Previous page: TCP：传输控制协议">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="DNS.html" class="navigation navigation-next " aria-label="Next page: DNS：域名系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HTTP：超文本传输协议","level":"2.5","depth":1,"next":{"title":"DNS：域名系统","level":"2.6","depth":1,"path":"DNS.md","ref":"DNS.md","articles":[]},"previous":{"title":"TCP：传输控制协议","level":"2.4","depth":1,"path":"TCP.md","ref":"TCP.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"HTTP.md","mtime":"2024-09-25T11:43:02.231Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-25T13:40:03.945Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
